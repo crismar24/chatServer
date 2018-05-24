@@ -31,7 +31,7 @@ public class Connection extends Thread {
         }
     }
 
-    // обработка данных во время обращения
+    //обработка данных во время обращения
     private void whileChatting() throws IOException {
         String message = "Подключен пользователь "+socket.getInetAddress().getHostAddress();
         sendMessage(message);
@@ -46,7 +46,7 @@ public class Connection extends Thread {
             }
         } while (!message.equals("КЛИЕНТ - "+socket.getInetAddress().getHostAddress()+" - *"));
     }
-    // отправка сообщений клиенту
+    //отправка сообщений клиенту
     private void sendMessage(String message) {
         try {
             outputStream.writeObject(message);
@@ -58,7 +58,7 @@ public class Connection extends Thread {
         }
     }
 
-    // закрываем сокеты и потоки когда пользователь начатился
+    //закрываем сокеты и потоки когда пользователь начатился
     private void closeConnection(){
         try {
             outputStream.close();
