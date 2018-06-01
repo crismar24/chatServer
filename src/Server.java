@@ -10,7 +10,7 @@ public class Server extends JFrame {
 
     private int port = 7777;
 
-    private static JTextArea chatWindow;
+    private volatile static JTextArea chatWindow;
     private HashSet<Connection> connectionList = new HashSet<Connection>();
     private ServerSocket serverSocket;
 
